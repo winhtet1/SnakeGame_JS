@@ -136,18 +136,17 @@ function checkGameOver(){
             running = false;
             break;
     }
-    for(let i = 1; i < snake.length; i+=1){
-        if(snake[i].x == snake[0].x && snake[i].y == snake[0].x){
-            running = false;
-        }
-
-    }
+    // for(let i = 1; i < snake.length; i+=1){
+    //     if(snake[i].x == snake[0].x && snake[i].y == snake[0].x){
+    //         running = false;
+    //     }
+    // }
 };
 function displayGameOver(){
     ctx.font = "50px MV Boli";
     ctx.fillStyle = "black";
     ctx.textAlign = "center";
-    ctx.fillText("GAME OVER!", gameWidth / 2, gameHeight/2);
+    ctx.fillText("GAME OVER!", gameWidth / 2, gameHeight / 2);
     running = false;
 };
 function resetGame(){
