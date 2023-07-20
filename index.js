@@ -8,7 +8,7 @@ const boardBackground = "white";
 const snakeColor = "lightgreen";
 const snakeBorder = "black";
 const foodColor = "red";
-const unitSize = 25;
+const unitSize = 20;
 let running = false;
 let xVelocity = unitSize;
 let yVelocity = 0;
@@ -16,8 +16,8 @@ let foodX;
 let foodY;
 let score = 0;
 let snake = [
-    {x:unitSize * 4, y:0},
-    {x:unitSize * 3, y:0},
+    // {x:unitSize * 4, y:0},
+    // {x:unitSize * 3, y:0},
     {x:unitSize * 2, y:0},
     {x:unitSize, y:0},
     {x:0, y:0}
@@ -136,11 +136,11 @@ function checkGameOver(){
             running = false;
             break;
     }
-    // for(let i = 1; i < snake.length; i+=1){
-    //     if(snake[i].x == snake[0].x && snake[i].y == snake[0].x){
-    //         running = false;
-    //     }
-    // }
+    for(let i = 1; i < snake.length; i+=1){
+        if(snake[i].x == snake[0].x && snake[i].y == snake[0].y){
+            running = false;
+        } 
+    }
 };
 function displayGameOver(){
     ctx.font = "50px MV Boli";
@@ -154,8 +154,8 @@ function resetGame(){
     xVelocity = unitSize;
     yVelocity = 0;
     snake = [
-        {x:unitSize * 4, y:0},
-        {x:unitSize * 3, y:0},
+        // {x:unitSize * 4, y:0},
+        // {x:unitSize * 3, y:0},
         {x:unitSize * 2, y:0},
         {x:unitSize, y:0},
         {x:0, y:0}
